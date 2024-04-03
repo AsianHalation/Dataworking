@@ -9,17 +9,22 @@
 //3NF---------Een tabel bevindt zich in 3NF als het in 2NF is en als er geen transitieve functionele afhankelijkheid is. Dat wil zeggen, elk niet-sleutelattribuut moet direct afhankelijk zijn van de primaire sleutel, niet van een ander niet-sleutelattribuut.
 
 
-# Normalisatie ZZP-Daily
+# Normalisatie Le Deli
 
 ## 1ste - 1NF
-factuurnummer, datum, vervaldatum, omschrijving,totaal excl BTW, totaal incl BTW, bedrag, duur_van_tijd, bedrag, bedrijfsnaam
+bonnummer, datum, tijd, klantnaam, afdeling, aantal, omschrijving, prijs, totaal_Excl_BTW, totaal_Incl_BTW, 21%_BTW,
 
 ## 2e - 2NF
-Klant: Primary_key:klant_id, bedrijfsnaam, adres, postcode, plaats
-Service: Primary_key:service_id, omschrijving, bedrag, duur_van_tijd
+product: Primary_Key: product_id, omschrijving, prijs
+Klant: Primary_Key: klant_id, klantnaam, tijd
+Tafel: Primary_Key: tafel_id,
 
 ## 3e - 3NF
-
-Klant:      Primary_key:klant_id, bedrijfsnaam, adres, postcode, plaats
-Service:    Primary_Key:service_id, duur_van_tijd, bedrag, omschrijving
-Factuur:    Primary_Key:factuurnummer, datum, vervaldatum, totaal_Excl_BTW, 21%_BTW, totaal_Incl_btw, Foreign_Key: klant_id, Foreign: service_id
+product: Primary_Key: product_id, omschrijving, prijs
+Klant: Primary_Key: klant_id, klantnaam, tijd
+Tafel: Primary_Key: tafel_id, 
+    -   Foreign_Key: klant_id
+Bon: Primary_Key: bonnummer, datum, tijd, aantal, afdeling, aantal, totaal_Excl_BTW, totaal_Incl_BTW, 21%_BTW, afdeling, 
+    -   Foreign_Key: klant_id, 
+    -   Foreign_Key: product_id,
+    -   Foreign_Key: tafel_id
