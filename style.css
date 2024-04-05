@@ -1,0 +1,68 @@
+
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    background-color:lightgray;
+    border-radius: 5px;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    margin: 0 15;
+    background-color: cadetblue;
+    border-radius: 5px;
+    border-color: black;
+    border-style: solid;
+}
+
+nav ul li::after {
+    background-color: black;
+    color:white;
+    transition: 0.5s;
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin: 30px;
+}
+
+/*-----------------------BODY---------------------*/
+
+body {
+    background-color: lightslategrey;
+    font-family: system-ui;
+}
+
+/*------------------FORM----------------*/
+
+form {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+form>input {
+    margin: 5px;
+    width: 80%;
+}
+
+.submit {
+    border-style: none;
+    border-radius: 5px;
+    background-color: #FFE6D4;
+    padding: 8px 20px;
+    letter-spacing: .8px;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.2);
+    cursor: pointer;
+}
